@@ -4,9 +4,9 @@ use Rammewerk\Component\Hydrator\Hydrator;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$request = \Rammewerk\Request\Request::simpleInitialize();
+$request = \Rammewerk\Http\RequestFactory::create();
 
-$response = new \Rammewerk\Request\Response();
+$response = new \Rammewerk\Http\Response();
 
 $response->htmxRetarget('.test');
 

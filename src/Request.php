@@ -23,21 +23,9 @@ class Request extends SymfonyRequest {
 
 
 
-    /** @noinspection PhpUnused */
-    public static function simpleInitialize(): static {
-        $request = self::createFromGlobals();
-        $request->setHtmxRequest($request->headers);
-        $session = new \Symfony\Component\HttpFoundation\Session\Session(new NativeSessionStorage([
-            'cookie_secure'   => true,
-            'cookie_samesite' => Cookie::SAMESITE_STRICT,
-            'cookie_httponly' => true,
-        ]));
-        $request->flash = $session->getFlashBag();
-        $session->start();
-        $request->setSession($session);
-        return $request;
+    public function setFlashBag(FlashBagInterface $getFlashBag): void {
+        $this->flash = $getFlashBag;
     }
-
 
 
     /*
