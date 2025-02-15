@@ -1,0 +1,40 @@
+{
+  "name": "rammewerk/http",
+  "type": "library",
+  "description": "A convenient way to handle HTTP requests and responses in PHP",
+  "homepage": "https://rammewerk.com",
+  "license": "MIT",
+  "keywords": [
+    "request"
+  ],
+  "authors": [
+    {
+      "name": "Kristoffer Follestad",
+      "email": "kristoffer@rammewerk.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Rammewerk\\Http\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "tests/",
+      ".idea/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Rammewerk\\Http\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "rammewerk/hydrator": "^1.4.1",
+    "symfony/http-foundation": "^v7.2.3",
+    "symfony/security-csrf": "^v7.2.3"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1.0",
+    "phpunit/phpunit": "^11.5"
+  }
+}
